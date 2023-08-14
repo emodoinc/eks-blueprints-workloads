@@ -5,4 +5,4 @@ spec:
   env:
   ingress:
     host:
-    type: alb
+    type: nginx
