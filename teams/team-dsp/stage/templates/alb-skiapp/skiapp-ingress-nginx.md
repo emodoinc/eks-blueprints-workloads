@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: 
+    - host: skiapp.{{ .Values.spec.ingress.host }}
       http:
         paths:
           - path: /
