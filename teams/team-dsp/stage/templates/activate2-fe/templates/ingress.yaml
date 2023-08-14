@@ -1,8 +1,7 @@
-{{- if .Values.ingress.enabled -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "activate2-fe.fullname" . }}
+  name: release-name-activate2-fe
   annotations:
     nginx.ingress.kubernetes.io/canary: "false"
     nginx.ingress.kubernetes.io/client-body-buffer-size: 64K
@@ -13,18 +12,17 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-buffering: "on"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
-    external-dns.alpha.kubernetes.io/hostname: {{.Values.ingress.hostname}}
+    external-dns.alpha.kubernetes.io/hostname: activate2-fe.staging.axonixtest.com
 spec:
   ingressClassName: nginx
   rules:
-    - host: {{ .Values.ingress.hostname }}
+    - host: activate2-fe.staging.axonixtest.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ include "activate2-fe.fullname" . }}
+                name: release-name-activate2-fe
                 port:
                   number: 80
-{{- end }}
