@@ -15,7 +15,7 @@ metadata:
     external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
     external-dns.alpha.kubernetes.io/hostname: {{.Values.ingress.hostname}}
 spec:
-  ingressClassName: ingress-nginx
+  ingressClassName: nginx
   rules:
     - host: {{ .Values.ingress.hostname }}
       http:
