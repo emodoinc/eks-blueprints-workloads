@@ -1,5 +1,5 @@
 apiVersion: v1
 appVersion: "1.0"
 name: application-sets
-description: Application Set example for mult-cluster
+description: Application Set example for multi-cluster
 version: 0.1.0
