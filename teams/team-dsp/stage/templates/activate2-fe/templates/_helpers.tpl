@@ -35,8 +35,10 @@ Common labels
 */}}
 {{- define "activate2-fe.labels" -}}
 helm.sh/chart: {{ include "activate2-fe.chart" . }}
-app: {{include "activate2-fe.fullname" .}}
 {{ include "activate2-fe.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
