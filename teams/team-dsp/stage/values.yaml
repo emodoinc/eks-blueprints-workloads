@@ -1,0 +1,8 @@
+labels:
+  env: stage
+  team: dsp
+spec:
+  env:
+  ingress:
+    host:
+    type: nginx
