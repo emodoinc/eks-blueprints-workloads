@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: release-name-activate2-fe
+  labels:
+    helm.sh/chart: activate2-fe-0.1.0
+    app.kubernetes.io/name: activate2-fe
+    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "activate2-fe.staging.axonixtest.com"
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: release-name-activate2-fe
+                port:
+                  number: 80
