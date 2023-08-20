@@ -3,8 +3,11 @@ kind: Ingress
 metadata:
   name: skiapp-ingress-nginx
   namespace: team-dsp
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+
 spec:
-  ingressClassName: nginx
+  ingressClassName: ingress-nginx-external
   rules:
     - host: skiapp.{{ .Values.spec.ingress.host }}  
       http:

@@ -8,8 +8,10 @@ metadata:
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "1.16.0"
     app.kubernetes.io/managed-by: Helm
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"  
 spec:
-  ingressClassName: nginx
+  ingressClassName: ingress-nginx-external
   rules:
     - host: "activate2-fe.staging.axonixtest.com"
       http:

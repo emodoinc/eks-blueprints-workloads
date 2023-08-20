@@ -27,7 +27,7 @@ spec:
         - name: activate2-fe
           securityContext:
             {}
-          image: "945109781822.dkr.ecr.us-east-1.amazonaws.com:master_f82992d"
+          image: "945109781822.dkr.ecr.us-east-1.amazonaws.com/activate2-fe:master_f0d1063"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
