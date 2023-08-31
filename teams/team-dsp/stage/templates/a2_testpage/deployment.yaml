@@ -27,7 +27,7 @@ spec:
         - name: a2_testpage
           securityContext:
             {}
-          image: "945109781822.dkr.ecr.us-east-1.amazonaws.com/a2_testpage:lastest"
+          image: "945109781822.dkr.ecr.us-east-1.amazonaws.com/a2_testpage:latest"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
